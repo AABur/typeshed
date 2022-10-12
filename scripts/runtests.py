@@ -27,17 +27,13 @@ _PYTHON_VERSION = "3.7"
 def _parse_jsonc(json_text: str) -> str:
     # strip comments from the file
     lines = [line for line in json_text.split("\n") if not line.strip().startswith("//")]
-    # strip trailing commas from the file
-    valid_json = re.sub(r",(\s*?[\}\]])", r"\1", "\n".join(lines))
-    return valid_json
+    return re.sub(r",(\s*?[\}\]])", r"\1", "\n".join(lines))
 
 
 def _get_strict_params(stub_path: str) -> list[str]:
     with open(_STRICTER_CONFIG_FILE, encoding="UTF-8") as file:
         data = json.loads(_parse_jsonc(file.read()))
-    if stub_path in data["exclude"]:
-        return []
-    return ["-p", _STRICTER_CONFIG_FILE]
+    return [] if stub_path in data["exclude"] else ["-p", _STRICTER_CONFIG_FILE]
 
 
 def main() -> None:

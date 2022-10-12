@@ -6,7 +6,7 @@ from typing_extensions import assert_type
 # mypy raises: 'Need type annotation for "bad"'
 # pyright is fine with it.
 # bad = dict()
-good: Dict[str, str] = dict()
+good: Dict[str, str] = {}
 assert_type(good, Dict[str, str])
 
 assert_type(dict(arg=1), Dict[str, int])
