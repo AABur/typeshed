@@ -145,8 +145,15 @@ def run_all_tests(*, files_to_test: Sequence[str], typeshed_location: str, print
     for i, f in enumerate(files_to_test):
         python_version = "{0.major}.{0.minor}".format(sys.version_info)
         stderr = (
-            run_pytype(filename=f, python_version=python_version, typeshed_location=typeshed_location) if not dry_run else None
+            None
+            if dry_run
+            else run_pytype(
+                filename=f,
+                python_version=python_version,
+                typeshed_location=typeshed_location,
+            )
         )
+
         if stderr:
             if print_stderr:
                 print(stderr)
