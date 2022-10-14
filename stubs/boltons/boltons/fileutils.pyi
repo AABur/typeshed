@@ -47,7 +47,6 @@ def iter_find_files(
     directory, patterns, ignored: Incomplete | None = ..., include_dirs: bool = ...
 ) -> Generator[Incomplete, None, None]: ...
 
-copytree = copy_tree
 file = object
 
 class DummyFile(file):
