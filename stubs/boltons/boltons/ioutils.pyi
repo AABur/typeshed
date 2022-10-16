@@ -2,8 +2,7 @@ import abc
 from _typeshed import Incomplete
 from abc import abstractmethod
 
-unicode = str
-text_type = unicode
+text_type = str
 binary_type = bytes
 READ_CHUNK_SIZE: int
 

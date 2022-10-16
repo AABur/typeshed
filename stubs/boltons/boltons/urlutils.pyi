@@ -88,8 +88,6 @@ VALUE: Incomplete
 SPREV: Incomplete
 SNEXT: Incomplete
 
-OMD = OrderedMultiDict
-
 class QueryParamDict(OrderedMultiDict):
     @classmethod
     def from_text(cls, query_string): ...
