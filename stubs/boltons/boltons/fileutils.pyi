@@ -46,6 +46,7 @@ def iter_find_files(
 ) -> Generator[Incomplete, None, None]: ...
 def copy_tree(src, dst, symlinks: bool = ..., ignore: Incomplete | None = ...): ...
 
+copytree = copy_tree
 file = object
 
 class DummyFile(file):
