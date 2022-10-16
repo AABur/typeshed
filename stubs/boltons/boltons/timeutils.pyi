@@ -37,6 +37,8 @@ class LocalTZInfo(tzinfo):
     def dst(self, dt): ...
     def tzname(self, dt): ...
 
+LocalTZ: Incomplete
+
 class USTimeZone(tzinfo):
     stdoffset: Incomplete
     reprname: Incomplete
